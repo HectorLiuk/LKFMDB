@@ -8,6 +8,7 @@
 
 #import "ViewController.h"
 #import "User.h"
+#import "LKDBTool.h"
 @interface ViewController ()
 
 @end
@@ -26,7 +27,7 @@
         user.name = [NSString stringWithFormat:@"帅哥%d",i];
         user.sex = @"男";
         user.descn = @"我是帅哥";
-        user.height = 185;
+        user.height = 175+i;
         
         dispatch_async(dispatch_get_global_queue(0,0), ^{
             [user save];
@@ -65,20 +66,71 @@
 
 //条件删除
 - (IBAction)delete:(id)sender {
+    [User deleteObjectsWithFormat:@"Where %@ = %d",@"name",10];
+
 }
+
 //多子线程删除
 - (IBAction)delete1:(id)sender {
+    for (int i = 0; i < 5; i++) {
+        User *user = [User new];
+        user.account = [NSString stringWithFormat:@"%d",i];
+        user.name = [NSString stringWithFormat:@"帅哥%d",i];
+        user.sex = @"男";
+        user.descn = @"我是帅哥";
+        user.height = 185;
+        dispatch_async(dispatch_get_global_queue(0,0), ^{
+            [user deleteObject];
+        });
+        
+    }
 }
 //事务删除
 - (IBAction)detete2:(id)sender {
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        NSMutableArray *array = [NSMutableArray array];
+        for (int i = 0; i < 100; i++) {
+            User *user = [[User alloc] init];
+            user.name = [NSString stringWithFormat:@"呵呵%d",i];
+            user.age = 10+i;
+            user.sex = @"女";
+            [array addObject:user];
+        }
+        [User deleteObjects:array];
+    });
 }
 
 
 //多子线程更新
 - (IBAction)update1:(id)sender {
+    for (int i = 0; i < 5; i++) {
+        User *user = [User new];
+        user.account = [NSString stringWithFormat:@"%d",i];
+        user.name = [NSString stringWithFormat:@"帅哥%d",i];
+        user.sex = @"男";
+        user.descn = @"我是更新的数据:我是帅哥我自豪";
+        user.height = 185;
+        dispatch_async(dispatch_get_global_queue(0,0), ^{
+            [user update];
+        });
+    }
+    
+    
 }
 //事务更新
 - (IBAction)update2:(id)sender {
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        NSMutableArray *array = [NSMutableArray array];
+        for (int i = 0; i < 100; i++) {
+            User *user = [[User alloc] init];
+            user.name = [NSString stringWithFormat:@"呵呵%d",i];
+            user.age = 10+i;
+            user.sex = @"女";
+            user.descn = @"我是事务更新-呵呵";
+            [array addObject:user];
+        }
+        [User updateObjects:array];
+    });
 }
 
 
@@ -87,15 +139,33 @@
 
 //查一条数据
 - (IBAction)query1:(id)sender {
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        User *users = [User new];
+
+        
+//        LKDBQueryConfig *co = [[LKDBQueryConfig alloc] object:User type:WHERE key:users.name opt:@"=" value:@"帅哥1"];
+        
+        
+        NSLog(@"第一条:%@",[User findFirstByCriteria:@" WHERE age = 20 "]);
+    });
 }
 //条件查询
 - (IBAction)query2:(id)sender {
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        NSLog(@"小于20岁:%@",[User findByCriteria:@" WHERE age < 4 "]);
+    });
 }
 //查询全部
 - (IBAction)query3:(id)sender {
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        NSLog(@"全部:%@",[User findAll]);
+        
+    });
 }
 //分页查询
 - (IBAction)query4:(id)sender {
+    
+    
 }
 
 
