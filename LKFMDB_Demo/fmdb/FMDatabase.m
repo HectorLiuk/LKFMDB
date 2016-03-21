@@ -147,9 +147,9 @@
         NSLog(@"error opening!: %d", err);
         return NO;
     }
-//    else{
-//        [self setKey:DB_SECRETKEY];
-//    }
+    else{
+        [self setKey:DB_SECRETKEY];
+    }
     
     if (_maxBusyRetryTimeInterval > 0.0) {
         // set the handler
@@ -174,9 +174,9 @@
         NSLog(@"error opening!: %d", err);
         return NO;
     }
-//    else{
-//        [self setKey:DB_SECRETKEY];
-//    }
+    else{
+        [self setKey:DB_SECRETKEY];
+    }
     
     if (_maxBusyRetryTimeInterval > 0.0) {
         // set the handler
