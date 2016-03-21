@@ -11,8 +11,8 @@
 
 ####基本模块介绍
 - LKDBTool 创建单例对数据库操作
-- LKDBModel 核心业务模块 对FMDB封装
-- LKDBColumnDes 修饰 主要对字段修饰
+- LKDBModel 核心业务模块 对FMDB封装 核心模块参考**JSONModel** 对属性的获取
+- LKDBColumnDes 修饰 对字段修饰
 - LKDBQueryConfig sql语句封装 -------------正在对此模块封装中......
 
 ####To do
