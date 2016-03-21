@@ -9,7 +9,15 @@
        [self setKey:DB_SECRETKEY];
       }
 
-##正在对查询删除sql语句封装中......
+####基本模块介绍
+- LKDBTool 创建单例对数据库操作
+- LKDBModel 核心业务模块 对FMDB封装
+- LKDBColumnDes 修饰 主要对字段修饰
+- LKDBQueryConfig sql语句封装        正在对此模块封装中......
 
-#欢迎各位大神指导  
+To do
+- ###正在对查询删除sql语句封装中.....
+- ###正在写完善API
+
+##欢迎各位大神指导  ##544523660@qq.com 
 #跪求点赞
