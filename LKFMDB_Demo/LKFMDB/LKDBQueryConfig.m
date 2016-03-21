@@ -4,7 +4,7 @@
 //
 //  Created by lk on 16/3/21.
 //  Copyright © 2016年 LK. All rights reserved.
-//
+//  github https://github.com/544523660/LKFMDB
 
 #import "LKDBQueryConfig.h"
 #import "LKDBModel.h"

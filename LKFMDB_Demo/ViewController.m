@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-
+#import "User.h"
 @interface ViewController ()
 
 @end
@@ -16,12 +16,99 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    
 }
+//多个子线程插入5条帅哥
+- (IBAction)saveData1:(id)sender {
+    for (int i = 0; i < 5; i++) {
+        User *user = [User new];
+        user.account = [NSString stringWithFormat:@"%d",i];
+        user.name = [NSString stringWithFormat:@"帅哥%d",i];
+        user.sex = @"男";
+        user.descn = @"我是帅哥";
+        user.height = 185;
+        
+        dispatch_async(dispatch_get_global_queue(0,0), ^{
+            [user save];
+        });
+        
+    }
+}
+//开辟队列插入5条欧巴
+- (IBAction)saveData2:(id)sender {
+    dispatch_queue_t q1 = dispatch_queue_create("queue1", NULL);
+    dispatch_async(q1, ^{
+        for (int i = 5; i < 10; ++i) {
+            User *user = [[User alloc] init];
+            user.account = [NSString stringWithFormat:@"%d",i];
+            user.name = @"欧巴";
+            user.sex = @"女Or男";
+            user.age = i+5;
+            [user save];
+        }
+    });
+}
+//事务插入100个呵呵
+- (IBAction)saveData3:(id)sender {
+    dispatch_async(dispatch_get_global_queue(0, 0), ^{
+        NSMutableArray *array = [NSMutableArray array];
+        for (int i = 0; i < 100; i++) {
+            User *user = [[User alloc] init];
+            user.name = [NSString stringWithFormat:@"呵呵%d",i];
+            user.age = 10+i;
+            user.sex = @"女";
+            [array addObject:user];
+        }
+        [User saveObjects:array];
+    });
+}
+
+//条件删除
+- (IBAction)delete:(id)sender {
+}
+//多子线程删除
+- (IBAction)delete1:(id)sender {
+}
+//事务删除
+- (IBAction)detete2:(id)sender {
+}
+
+
+//多子线程更新
+- (IBAction)update1:(id)sender {
+}
+//事务更新
+- (IBAction)update2:(id)sender {
+}
+
+
+
+
+
+//查一条数据
+- (IBAction)query1:(id)sender {
+}
+//条件查询
+- (IBAction)query2:(id)sender {
+}
+//查询全部
+- (IBAction)query3:(id)sender {
+}
+//分页查询
+- (IBAction)query4:(id)sender {
+}
+
+
+
+
+
+
+
+
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
 }
 
 @end

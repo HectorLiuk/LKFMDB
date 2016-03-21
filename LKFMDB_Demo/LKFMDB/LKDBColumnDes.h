@@ -4,7 +4,7 @@
 //
 //  Created by lk on 16/3/21.
 //  Copyright © 2016年 LK. All rights reserved.
-//
+//  github https://github.com/544523660/LKFMDB
 //
 // NOTModify  //无任何修饰
 // PrimaryKey   //设置主键
@@ -37,7 +37,7 @@
 @property (nonatomic, assign, getter=isUnique)  BOOL      unique;
 /** 是否为不为空 */
 @property (nonatomic, assign, getter=isNotNull)  BOOL      notNull;
-/** 是否为自动升序 */
+/** 是否为自动升序 如何为text就不能自动升序 */
 @property (nonatomic, assign, getter=isAutoincrement)  BOOL      autoincrement;
 /** 此属性是否创建数据库字段 */
 @property (nonatomic, assign, getter=isUseless) BOOL useless;

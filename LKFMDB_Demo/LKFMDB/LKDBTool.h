@@ -4,14 +4,14 @@
 //
 //  Created by lk on 16/3/21.
 //  Copyright © 2016年 LK. All rights reserved.
-//  
+//  github https://github.com/544523660/LKFMDB
 
 #import <Foundation/Foundation.h>
 #import "sqlite3.h"
 #import "FMDB.h"
 #import <objc/runtime.h>
 #import "LKDBColumnDes.h"
-
+#import "LKDBQueryConfig.h"
 
 @interface LKDBTool : NSObject
 

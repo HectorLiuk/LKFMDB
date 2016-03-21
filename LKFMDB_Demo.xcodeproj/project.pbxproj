@@ -26,6 +26,7 @@
 		4AFBEF9C1C9FE4F500906E8F /* LKDBColumnDes.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFBEF9B1C9FE4F500906E8F /* LKDBColumnDes.m */; };
 		4AFBEF9E1C9FEA1E00906E8F /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AFBEF9D1C9FEA1E00906E8F /* libsqlite3.0.tbd */; };
 		4AFBEFA11C9FEBCA00906E8F /* LKDBQueryConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFBEFA01C9FEBCA00906E8F /* LKDBQueryConfig.m */; };
+		4AFBEFA41C9FF8CC00906E8F /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFBEFA31C9FF8CC00906E8F /* User.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,8 @@
 		4AFBEF9D1C9FEA1E00906E8F /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
 		4AFBEF9F1C9FEBCA00906E8F /* LKDBQueryConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKDBQueryConfig.h; sourceTree = "<group>"; };
 		4AFBEFA01C9FEBCA00906E8F /* LKDBQueryConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKDBQueryConfig.m; sourceTree = "<group>"; };
+		4AFBEFA21C9FF8CC00906E8F /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
+		4AFBEFA31C9FF8CC00906E8F /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +144,8 @@
 				4AFBEF501C9FD79E00906E8F /* AppDelegate.m */,
 				4AFBEF521C9FD79E00906E8F /* ViewController.h */,
 				4AFBEF531C9FD79E00906E8F /* ViewController.m */,
+				4AFBEFA21C9FF8CC00906E8F /* User.h */,
+				4AFBEFA31C9FF8CC00906E8F /* User.m */,
 				4AFBEF551C9FD79E00906E8F /* Main.storyboard */,
 				4AFBEF581C9FD79E00906E8F /* Assets.xcassets */,
 				4AFBEF5A1C9FD79E00906E8F /* LaunchScreen.storyboard */,
@@ -341,6 +346,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AFBEFA41C9FF8CC00906E8F /* User.m in Sources */,
 				4AFBEF9C1C9FE4F500906E8F /* LKDBColumnDes.m in Sources */,
 				4AFBEF541C9FD79E00906E8F /* ViewController.m in Sources */,
 				4AFBEF961C9FD89700906E8F /* LKDBTool.m in Sources */,
