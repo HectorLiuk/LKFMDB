@@ -54,7 +54,6 @@
         NSString *tableName = NSStringFromClass(self.class);
         NSString *columeAndType = [self.class getColumeAndTypeString];
         NSString *sql = [NSString stringWithFormat:@"CREATE TABLE IF NOT EXISTS %@(%@);",tableName,columeAndType];
-        NSLog(@"sql:%@",sql);
         if (![db executeUpdate:sql]) {
             res = NO;
             *rollback = YES;
@@ -386,7 +385,6 @@
 /** 查询全部数据 */
 + (NSArray *)findAll
 {
-    NSLog(@"jkdb---%s",__func__);
     LKDBTool *lkDB = [LKDBTool shareInstance];
     NSMutableArray *users = [NSMutableArray array];
     [lkDB.dbQueue inDatabase:^(FMDatabase *db) {

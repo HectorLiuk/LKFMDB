@@ -26,6 +26,7 @@
         user.account = [NSString stringWithFormat:@"%d",i];
         user.name = [NSString stringWithFormat:@"帅哥%d",i];
         user.sex = @"男";
+        user.age = i;
         user.descn = @"我是帅哥";
         user.height = 175+i;
         
@@ -58,6 +59,7 @@
             user.name = [NSString stringWithFormat:@"呵呵%d",i];
             user.age = 10+i;
             user.sex = @"女";
+            user.account = [NSString stringWithFormat:@"%d",i];
             [array addObject:user];
         }
         [User saveObjects:array];
@@ -66,7 +68,7 @@
 
 //条件删除
 - (IBAction)delete:(id)sender {
-    [User deleteObjectsWithFormat:@"Where %@ = %d",@"name",10];
+    [User deleteObjectsWithFormat:@"Where %@ = %d",@"age",4];
 
 }
 
@@ -140,32 +142,37 @@
 //查一条数据
 - (IBAction)query1:(id)sender {
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        User *users = [User new];
-
-        
-//        LKDBQueryConfig *co = [[LKDBQueryConfig alloc] object:User type:WHERE key:users.name opt:@"=" value:@"帅哥1"];
-        
-        
-        NSLog(@"第一条:%@",[User findFirstByCriteria:@" WHERE age = 20 "]);
+        User *users = [User findFirstByCriteria:@" WHERE rowid = 3 "];
+        NSLog(@"第一条:%@",users);
     });
 }
 //条件查询
 - (IBAction)query2:(id)sender {
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        NSLog(@"小于20岁:%@",[User findByCriteria:@" WHERE age < 4 "]);
+        NSArray *dataArray = [User findByCriteria:@" WHERE age < 4 "];
+        for (User *user in dataArray) {
+            NSLog(@"条件查询%@",user);
+        }
+        
     });
 }
 //查询全部
 - (IBAction)query3:(id)sender {
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        NSLog(@"全部:%@",[User findAll]);
+        for (User *user in [User findAll]) {
+            NSLog(@"全部%@",user);
+        }
         
     });
 }
 //分页查询
 - (IBAction)query4:(id)sender {
+    static int rowid = 0;
+    NSArray *array = [User findByCriteria:[NSString stringWithFormat:@" WHERE rowid > %d limit 10",rowid]];
     
-    
+    for (User *user in array) {
+        NSLog(@"分页查询%@",user);
+    }
 }
 
 

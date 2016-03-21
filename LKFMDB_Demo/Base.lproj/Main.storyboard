@@ -213,7 +213,7 @@
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="32" y="28" width="141" height="222"/>
+                                    <rect key="frame" x="32" y="79" width="141" height="222"/>
                                     <mask key="subviews">
                                         <include reference="S7h-Dv-inX"/>
                                         <include reference="hnf-4v-X6R"/>
@@ -222,7 +222,7 @@
                                     </mask>
                                 </variation>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s0R-Tn-3vS">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s0R-Tn-3vS">
                                 <rect key="frame" x="300" y="37" width="169" height="222"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l0b-jM-XYa">
@@ -280,7 +280,7 @@
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="230" y="28" width="141" height="222"/>
+                                    <rect key="frame" x="227" y="79" width="141" height="222"/>
                                     <mask key="subviews">
                                         <include reference="l0b-jM-XYa"/>
                                         <include reference="9Gv-Yw-chX"/>
