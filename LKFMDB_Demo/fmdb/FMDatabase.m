@@ -146,7 +146,7 @@
     if(err != SQLITE_OK) {
         NSLog(@"error opening!: %d", err);
         return NO;
-    }
+    }//不需要加密请注释掉下面三行代码
     else{
         [self setKey:DB_SECRETKEY];
     }
@@ -173,7 +173,7 @@
     if(err != SQLITE_OK) {
         NSLog(@"error opening!: %d", err);
         return NO;
-    }
+    }//不需要加密请注释掉下面三行代码
     else{
         [self setKey:DB_SECRETKEY];
     }
