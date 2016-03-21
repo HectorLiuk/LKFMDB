@@ -15,6 +15,17 @@
 		4AFBEF5C1C9FD79E00906E8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4AFBEF5A1C9FD79E00906E8F /* LaunchScreen.storyboard */; };
 		4AFBEF671C9FD79E00906E8F /* LKFMDB_DemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFBEF661C9FD79E00906E8F /* LKFMDB_DemoTests.m */; };
 		4AFBEF721C9FD79E00906E8F /* LKFMDB_DemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFBEF711C9FD79E00906E8F /* LKFMDB_DemoUITests.m */; };
+		4AFBEF8C1C9FD7E800906E8F /* FMDatabase.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFBEF811C9FD7E800906E8F /* FMDatabase.m */; };
+		4AFBEF8D1C9FD7E800906E8F /* FMDatabaseAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFBEF831C9FD7E800906E8F /* FMDatabaseAdditions.m */; };
+		4AFBEF8E1C9FD7E800906E8F /* FMDatabasePool.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFBEF851C9FD7E800906E8F /* FMDatabasePool.m */; };
+		4AFBEF8F1C9FD7E800906E8F /* FMDatabaseQueue.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFBEF871C9FD7E800906E8F /* FMDatabaseQueue.m */; };
+		4AFBEF901C9FD7E800906E8F /* FMResultSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFBEF8A1C9FD7E800906E8F /* FMResultSet.m */; };
+		4AFBEF911C9FD7E800906E8F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4AFBEF8B1C9FD7E800906E8F /* Info.plist */; };
+		4AFBEF961C9FD89700906E8F /* LKDBTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFBEF951C9FD89700906E8F /* LKDBTool.m */; };
+		4AFBEF991C9FDE8700906E8F /* LKDBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFBEF981C9FDE8700906E8F /* LKDBModel.m */; };
+		4AFBEF9C1C9FE4F500906E8F /* LKDBColumnDes.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFBEF9B1C9FE4F500906E8F /* LKDBColumnDes.m */; };
+		4AFBEF9E1C9FEA1E00906E8F /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AFBEF9D1C9FEA1E00906E8F /* libsqlite3.0.tbd */; };
+		4AFBEFA11C9FEBCA00906E8F /* LKDBQueryConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFBEFA01C9FEBCA00906E8F /* LKDBQueryConfig.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +62,27 @@
 		4AFBEF6D1C9FD79E00906E8F /* LKFMDB_DemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LKFMDB_DemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4AFBEF711C9FD79E00906E8F /* LKFMDB_DemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LKFMDB_DemoUITests.m; sourceTree = "<group>"; };
 		4AFBEF731C9FD79E00906E8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4AFBEF801C9FD7E800906E8F /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
+		4AFBEF811C9FD7E800906E8F /* FMDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabase.m; sourceTree = "<group>"; };
+		4AFBEF821C9FD7E800906E8F /* FMDatabaseAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseAdditions.h; sourceTree = "<group>"; };
+		4AFBEF831C9FD7E800906E8F /* FMDatabaseAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseAdditions.m; sourceTree = "<group>"; };
+		4AFBEF841C9FD7E800906E8F /* FMDatabasePool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabasePool.h; sourceTree = "<group>"; };
+		4AFBEF851C9FD7E800906E8F /* FMDatabasePool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabasePool.m; sourceTree = "<group>"; };
+		4AFBEF861C9FD7E800906E8F /* FMDatabaseQueue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabaseQueue.h; sourceTree = "<group>"; };
+		4AFBEF871C9FD7E800906E8F /* FMDatabaseQueue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMDatabaseQueue.m; sourceTree = "<group>"; };
+		4AFBEF881C9FD7E800906E8F /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
+		4AFBEF891C9FD7E800906E8F /* FMResultSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMResultSet.h; sourceTree = "<group>"; };
+		4AFBEF8A1C9FD7E800906E8F /* FMResultSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FMResultSet.m; sourceTree = "<group>"; };
+		4AFBEF8B1C9FD7E800906E8F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4AFBEF941C9FD89700906E8F /* LKDBTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKDBTool.h; sourceTree = "<group>"; };
+		4AFBEF951C9FD89700906E8F /* LKDBTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKDBTool.m; sourceTree = "<group>"; };
+		4AFBEF971C9FDE8700906E8F /* LKDBModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKDBModel.h; sourceTree = "<group>"; };
+		4AFBEF981C9FDE8700906E8F /* LKDBModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKDBModel.m; sourceTree = "<group>"; };
+		4AFBEF9A1C9FE4F500906E8F /* LKDBColumnDes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKDBColumnDes.h; sourceTree = "<group>"; };
+		4AFBEF9B1C9FE4F500906E8F /* LKDBColumnDes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKDBColumnDes.m; sourceTree = "<group>"; };
+		4AFBEF9D1C9FEA1E00906E8F /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
+		4AFBEF9F1C9FEBCA00906E8F /* LKDBQueryConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKDBQueryConfig.h; sourceTree = "<group>"; };
+		4AFBEFA01C9FEBCA00906E8F /* LKDBQueryConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKDBQueryConfig.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AFBEF9E1C9FEA1E00906E8F /* libsqlite3.0.tbd in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +114,7 @@
 		4AFBEF401C9FD79E00906E8F = {
 			isa = PBXGroup;
 			children = (
+				4AFBEF9D1C9FEA1E00906E8F /* libsqlite3.0.tbd */,
 				4AFBEF4B1C9FD79E00906E8F /* LKFMDB_Demo */,
 				4AFBEF651C9FD79E00906E8F /* LKFMDB_DemoTests */,
 				4AFBEF701C9FD79E00906E8F /* LKFMDB_DemoUITests */,
@@ -101,6 +135,8 @@
 		4AFBEF4B1C9FD79E00906E8F /* LKFMDB_Demo */ = {
 			isa = PBXGroup;
 			children = (
+				4AFBEF931C9FD86400906E8F /* LKFMDB */,
+				4AFBEF7F1C9FD7E800906E8F /* fmdb */,
 				4AFBEF4F1C9FD79E00906E8F /* AppDelegate.h */,
 				4AFBEF501C9FD79E00906E8F /* AppDelegate.m */,
 				4AFBEF521C9FD79E00906E8F /* ViewController.h */,
@@ -138,6 +174,40 @@
 				4AFBEF731C9FD79E00906E8F /* Info.plist */,
 			);
 			path = LKFMDB_DemoUITests;
+			sourceTree = "<group>";
+		};
+		4AFBEF7F1C9FD7E800906E8F /* fmdb */ = {
+			isa = PBXGroup;
+			children = (
+				4AFBEF801C9FD7E800906E8F /* FMDatabase.h */,
+				4AFBEF811C9FD7E800906E8F /* FMDatabase.m */,
+				4AFBEF821C9FD7E800906E8F /* FMDatabaseAdditions.h */,
+				4AFBEF831C9FD7E800906E8F /* FMDatabaseAdditions.m */,
+				4AFBEF841C9FD7E800906E8F /* FMDatabasePool.h */,
+				4AFBEF851C9FD7E800906E8F /* FMDatabasePool.m */,
+				4AFBEF861C9FD7E800906E8F /* FMDatabaseQueue.h */,
+				4AFBEF871C9FD7E800906E8F /* FMDatabaseQueue.m */,
+				4AFBEF881C9FD7E800906E8F /* FMDB.h */,
+				4AFBEF891C9FD7E800906E8F /* FMResultSet.h */,
+				4AFBEF8A1C9FD7E800906E8F /* FMResultSet.m */,
+				4AFBEF8B1C9FD7E800906E8F /* Info.plist */,
+			);
+			path = fmdb;
+			sourceTree = "<group>";
+		};
+		4AFBEF931C9FD86400906E8F /* LKFMDB */ = {
+			isa = PBXGroup;
+			children = (
+				4AFBEF941C9FD89700906E8F /* LKDBTool.h */,
+				4AFBEF951C9FD89700906E8F /* LKDBTool.m */,
+				4AFBEF971C9FDE8700906E8F /* LKDBModel.h */,
+				4AFBEF981C9FDE8700906E8F /* LKDBModel.m */,
+				4AFBEF9A1C9FE4F500906E8F /* LKDBColumnDes.h */,
+				4AFBEF9B1C9FE4F500906E8F /* LKDBColumnDes.m */,
+				4AFBEF9F1C9FEBCA00906E8F /* LKDBQueryConfig.h */,
+				4AFBEFA01C9FEBCA00906E8F /* LKDBQueryConfig.m */,
+			);
+			path = LKFMDB;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,6 +313,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AFBEF911C9FD7E800906E8F /* Info.plist in Resources */,
 				4AFBEF5C1C9FD79E00906E8F /* LaunchScreen.storyboard in Resources */,
 				4AFBEF591C9FD79E00906E8F /* Assets.xcassets in Resources */,
 				4AFBEF571C9FD79E00906E8F /* Main.storyboard in Resources */,
@@ -270,9 +341,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AFBEF9C1C9FE4F500906E8F /* LKDBColumnDes.m in Sources */,
 				4AFBEF541C9FD79E00906E8F /* ViewController.m in Sources */,
+				4AFBEF961C9FD89700906E8F /* LKDBTool.m in Sources */,
+				4AFBEF991C9FDE8700906E8F /* LKDBModel.m in Sources */,
+				4AFBEF8E1C9FD7E800906E8F /* FMDatabasePool.m in Sources */,
 				4AFBEF511C9FD79E00906E8F /* AppDelegate.m in Sources */,
+				4AFBEF8F1C9FD7E800906E8F /* FMDatabaseQueue.m in Sources */,
 				4AFBEF4E1C9FD79E00906E8F /* main.m in Sources */,
+				4AFBEF8C1C9FD7E800906E8F /* FMDatabase.m in Sources */,
+				4AFBEFA11C9FEBCA00906E8F /* LKDBQueryConfig.m in Sources */,
+				4AFBEF901C9FD7E800906E8F /* FMResultSet.m in Sources */,
+				4AFBEF8D1C9FD7E800906E8F /* FMDatabaseAdditions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -414,6 +494,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = LKFMDB_Demo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.lk.LKFMDB-Demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -425,6 +506,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = LKFMDB_Demo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.lk.LKFMDB-Demo";
 				PRODUCT_NAME = "$(TARGET_NAME)";
