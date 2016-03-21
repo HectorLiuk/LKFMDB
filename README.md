@@ -10,12 +10,3 @@
        [self setKey:DB_SECRETKEY];
       }
 
-
-/** 别名 */
-@property (nonatomic, copy)  NSString *columnName;
-/** 限制 */
-@property (nonatomic, copy)  NSString *check;
-/** 默认 */
-@property (nonatomic, copy)  NSString *defaultValue;
-/** 外键 */
-@property (nonatomic, copy)  NSString *foreignKey;
