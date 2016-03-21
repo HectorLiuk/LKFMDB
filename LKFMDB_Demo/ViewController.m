@@ -113,7 +113,7 @@
         user.descn = @"我是更新的数据:我是帅哥我自豪";
         user.height = 185;
         dispatch_async(dispatch_get_global_queue(0,0), ^{
-            [user update];
+            [user saveOrUpdate];
         });
     }
     
@@ -131,7 +131,7 @@
             user.descn = @"我是事务更新-呵呵";
             [array addObject:user];
         }
-        [User updateObjects:array];
+        [User saveOrUpdateObjects:array];
     });
 }
 

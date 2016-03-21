@@ -7,6 +7,7 @@
 //  github https://github.com/544523660/LKFMDB
 
 #import "LKDBTool.h"
+#import "LKDBModel.h"
 
 @interface LKDBTool()
 @property (nonatomic, retain) FMDatabaseQueue *dbQueue;
