@@ -1,14 +1,14 @@
 # LKFMDB
 [![SUPPORT](https://img.shields.io/badge/support-iOS%207%2B%20-blue.svg?style=flat)](https://en.wikipedia.org/wiki/IOS_7)&nbsp;
-###对`FMDB`面向对象封装,支持任意类型主键,可对每个字段修饰,傻瓜式操作,一键即可保存更新,用过的人都说好。
+##对`FMDB`面向对象封装,支持任意类型主键,可对每个字段修饰,傻瓜式操作,一键即可保存更新,用过的人都说好。
 
-###如何使用
+##如何使用
 1. 默认程序导入过`FMDB`
 2. 导入文件`LKFMDB`
 3. 是否需要加密，不需要不用导入`SQLCipher`,下面会介绍如何加密。
 4. 对需要创建数据库的类继承`LKDBModel`
 
-###支持`SQLCipher`加密 
+##支持`SQLCipher`加密 
     默认为加密模式
     如需要取消在fmdb文件下FMDatabase.m文件下
       //注释掉低150行和177行代码
@@ -16,16 +16,16 @@
        [self setKey:DB_SECRETKEY];
       }
 
-###基本模块介绍
+##基本模块介绍
 - `LKDBTool` 创建单例对数据库操作
 - `LKDBModel` 核心业务模块 对FMDB封装。 核心模块runtime 对属性的获取
 - `LKDBColumnDes` 字段修饰模块 对字段修饰
 - `LKDBSQLState` sql语句封装模块 -------------正在对此模块封装中......
 
-###方法介绍
- ####`LKDBTool`
+##方法介绍
+###`LKDBTool`
 
- ####`LKDBModel`
+###`LKDBModel`
 ```
 #pragma mark 常用方法
 /** 保存或更新
@@ -81,30 +81,13 @@
  * 如果已经创建，返回YES
  */
 + (BOOL)createTable;
-
-
-
 #pragma mark 必须要重写的方法
 /** 如果子类中有一些property不需要创建数据库字段,或者对字段加修饰属性   具体请参考LKDBColumnDes类*/
 + (NSDictionary *)describeColumnDict;
-
-#pragma mark 不重要的方法
-/**
- *  获取该类的所有属性
- */
-+ (NSDictionary *)getPropertys;
-
-/** 获取所有属性，包括主键 */
-+ (NSDictionary *)getAllProperties;
-
-/** 数据库中是否存在表 */
-+ (BOOL)isExistInTable;
-
-/** 表中的字段*/
-+ (NSArray *)getColumns;
-
 ```
- ####`LKDBColumnDes`
+
+
+###`LKDBColumnDes`
 ```
 /** 别名 */
 @property (nonatomic, copy)  NSString *columnName;
@@ -145,10 +128,9 @@
  *  生成修饰语句
  */
 - (NSString *)finishModify;
-
-
 ```
- ####`LKDBSQLState`
+
+###`LKDBSQLState`
 ```
 /**
  *  查询方法
