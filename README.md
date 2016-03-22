@@ -77,6 +77,7 @@ else{
 ```
 
 ###`LKDBColumnDes`
+请看Demo `User.m`文件如何使用
 ```
 /** 别名 */
 @property (nonatomic, copy)  NSString *columnName;
