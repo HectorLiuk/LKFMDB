@@ -24,7 +24,7 @@ else{
 - `LKDBColumnDes` 字段修饰模块 对字段修饰
 - `LKDBSQLState` sql语句封装模块 -------------正在对此模块封装中......
 
-##方法介绍
+##常用方法介绍 - 具体查看Demo 
 ###`LKDBTool`
 ```
 /** 单列 操作数据库保证唯一*/
@@ -44,16 +44,11 @@ else{
  * 有主键，则更新
  */
 - (BOOL)saveOrUpdate;
-/** 保存或更新
- * 如果根据特定的列数据可以获取记录，则更新，
- * 没有记录，则保存
- */
-- (BOOL)saveOrUpdateByColumnName:(NSString*)columnName AndColumnValue:(NSString*)columnValue;
 /** 保存单个数据 */
 - (BOOL)save;
 /** 批量保存数据 */
 + (BOOL)saveObjects:(NSArray *)array;
-
+/** 事物保存或跟新 */
 +(BOOL)saveOrUpdateObjects:(NSArray *)array;
 /** 更新单个数据 */
 - (BOOL)update;
@@ -65,38 +60,21 @@ else{
 + (BOOL)deleteObjects:(NSArray *)array;
 /** 通过条件删除数据 */
 + (BOOL)deleteObjectsByCriteria:(NSString *)criteria;
-/** 通过条件删除 (多参数）--2 */
+/** 通过条件删除  */
 + (BOOL)deleteObjectsWithFormat:(NSString *)format, ...;
 /** 清空表 */
 + (BOOL)clearTable;
-
 /** 查询全部数据 */
 + (NSArray *)findAll;
-
-/** 通过主键查询 */
-+ (instancetype)findByPK:(id)inPk;
-
-+ (instancetype)findFirstWithFormat:(NSString *)format, ...;
-
 /** 查找某条数据 */
 + (instancetype)findFirstByCriteria:(NSString *)criteria;
-
-+ (NSArray *)findWithFormat:(NSString *)format, ...;
-
-/** 通过条件查找数据
- * 这样可以进行分页查询 @" WHERE pk > 5 limit 10"
- */
+/** 通过条件查找数据*/
 + (NSArray *)findByCriteria:(NSString *)criteria;
-/**
- * 创建表
- * 如果已经创建，返回YES
- */
-+ (BOOL)createTable;
-#pragma mark 必须要重写的方法
-/** 如果子类中有一些property不需要创建数据库字段,或者对字段加修饰属性   具体请参考LKDBColumnDes类*/
+
+//必须要重写的方法
+/** 如果子类中有一些property不需要创建数据库字段,或者对字段加修饰属性 具体请参考LKDBColumnDes类*/
 + (NSDictionary *)describeColumnDict;
 ```
-
 
 ###`LKDBColumnDes`
 ```
@@ -118,7 +96,6 @@ else{
 @property (nonatomic, assign, getter=isAutoincrement)  BOOL      autoincrement;
 /** 此属性是否创建数据库字段 */
 @property (nonatomic, assign, getter=isUseless) BOOL useless;
-
 /**
  *  主键便利构造器
  */
@@ -162,15 +139,6 @@ else{
  */
 -(NSString *)sqlOptionStr;
 ```
-
-
-
-
-
-
-
-
-
 
 
 ###To do
