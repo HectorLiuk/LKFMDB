@@ -9,12 +9,14 @@
 4. 对需要创建数据库的类继承`LKDBModel`
 
 ##支持`SQLCipher`加密 
-    默认为加密模式
-    如需要取消在fmdb文件下FMDatabase.m文件下
+默认为加密模式
+如需要取消在fmdb文件下FMDatabase.m文件下
+    ```
       //注释掉低150行和177行代码
       else{
        [self setKey:DB_SECRETKEY];
       }
+    ```
 
 ##基本模块介绍
 - `LKDBTool` 创建单例对数据库操作
