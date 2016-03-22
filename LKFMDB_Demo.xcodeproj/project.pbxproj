@@ -25,9 +25,9 @@
 		4AFBEF991C9FDE8700906E8F /* LKDBModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFBEF981C9FDE8700906E8F /* LKDBModel.m */; };
 		4AFBEF9C1C9FE4F500906E8F /* LKDBColumnDes.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFBEF9B1C9FE4F500906E8F /* LKDBColumnDes.m */; };
 		4AFBEF9E1C9FEA1E00906E8F /* libsqlite3.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AFBEF9D1C9FEA1E00906E8F /* libsqlite3.0.tbd */; };
-		4AFBEFA11C9FEBCA00906E8F /* LKDBQueryConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFBEFA01C9FEBCA00906E8F /* LKDBQueryConfig.m */; };
 		4AFBEFA41C9FF8CC00906E8F /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFBEFA31C9FF8CC00906E8F /* User.m */; };
-		A3BCC5AC1CA02D62002593D8 /* sqlite3.c in Sources */ = {isa = PBXBuildFile; fileRef = A3BCC5AA1CA02D62002593D8 /* sqlite3.c */; settings = {ASSET_TAGS = (); }; };
+		4AFBEFA71CA0E9DC00906E8F /* LKDBSQLState.m in Sources */ = {isa = PBXBuildFile; fileRef = 4AFBEFA61CA0E9DC00906E8F /* LKDBSQLState.m */; };
+		A3BCC5AC1CA02D62002593D8 /* sqlite3.c in Sources */ = {isa = PBXBuildFile; fileRef = A3BCC5AA1CA02D62002593D8 /* sqlite3.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,10 +83,10 @@
 		4AFBEF9A1C9FE4F500906E8F /* LKDBColumnDes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKDBColumnDes.h; sourceTree = "<group>"; };
 		4AFBEF9B1C9FE4F500906E8F /* LKDBColumnDes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKDBColumnDes.m; sourceTree = "<group>"; };
 		4AFBEF9D1C9FEA1E00906E8F /* libsqlite3.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.0.tbd; path = usr/lib/libsqlite3.0.tbd; sourceTree = SDKROOT; };
-		4AFBEF9F1C9FEBCA00906E8F /* LKDBQueryConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKDBQueryConfig.h; sourceTree = "<group>"; };
-		4AFBEFA01C9FEBCA00906E8F /* LKDBQueryConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKDBQueryConfig.m; sourceTree = "<group>"; };
 		4AFBEFA21C9FF8CC00906E8F /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = User.h; sourceTree = "<group>"; };
 		4AFBEFA31C9FF8CC00906E8F /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = User.m; sourceTree = "<group>"; };
+		4AFBEFA51CA0E9DC00906E8F /* LKDBSQLState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LKDBSQLState.h; sourceTree = "<group>"; };
+		4AFBEFA61CA0E9DC00906E8F /* LKDBSQLState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LKDBSQLState.m; sourceTree = "<group>"; };
 		A3BCC5AA1CA02D62002593D8 /* sqlite3.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = sqlite3.c; sourceTree = "<group>"; };
 		A3BCC5AB1CA02D62002593D8 /* sqlite3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = sqlite3.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -213,8 +213,8 @@
 				4AFBEF981C9FDE8700906E8F /* LKDBModel.m */,
 				4AFBEF9A1C9FE4F500906E8F /* LKDBColumnDes.h */,
 				4AFBEF9B1C9FE4F500906E8F /* LKDBColumnDes.m */,
-				4AFBEF9F1C9FEBCA00906E8F /* LKDBQueryConfig.h */,
-				4AFBEFA01C9FEBCA00906E8F /* LKDBQueryConfig.m */,
+				4AFBEFA51CA0E9DC00906E8F /* LKDBSQLState.h */,
+				4AFBEFA61CA0E9DC00906E8F /* LKDBSQLState.m */,
 			);
 			path = LKFMDB;
 			sourceTree = "<group>";
@@ -367,10 +367,10 @@
 				A3BCC5AC1CA02D62002593D8 /* sqlite3.c in Sources */,
 				4AFBEF8E1C9FD7E800906E8F /* FMDatabasePool.m in Sources */,
 				4AFBEF511C9FD79E00906E8F /* AppDelegate.m in Sources */,
+				4AFBEFA71CA0E9DC00906E8F /* LKDBSQLState.m in Sources */,
 				4AFBEF8F1C9FD7E800906E8F /* FMDatabaseQueue.m in Sources */,
 				4AFBEF4E1C9FD79E00906E8F /* main.m in Sources */,
 				4AFBEF8C1C9FD7E800906E8F /* FMDatabase.m in Sources */,
-				4AFBEFA11C9FEBCA00906E8F /* LKDBQueryConfig.m in Sources */,
 				4AFBEF901C9FD7E800906E8F /* FMResultSet.m in Sources */,
 				4AFBEF8D1C9FD7E800906E8F /* FMDatabaseAdditions.m in Sources */,
 			);

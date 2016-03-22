@@ -11,7 +11,7 @@
 #import "FMDB.h"
 #import <objc/runtime.h>
 #import "LKDBColumnDes.h"
-#import "LKDBQueryConfig.h"
+#import "LKDBSQLState.h"
 
 @interface LKDBTool : NSObject
 

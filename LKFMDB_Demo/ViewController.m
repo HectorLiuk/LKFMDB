@@ -68,7 +68,9 @@
 
 //条件删除
 - (IBAction)delete:(id)sender {
-    [User deleteObjectsWithFormat:@"Where %@ = %d",@"age",4];
+    LKDBSQLState *sql = [[LKDBSQLState alloc] object:[User class] type:WHERE key:@"age" opt:@"=" value:@"4"];
+    
+    [User deleteObjectsWithFormat:[sql sqlOptionStr]];
 
 }
 
@@ -142,14 +144,19 @@
 //查一条数据
 - (IBAction)query1:(id)sender {
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        User *users = [User findFirstByCriteria:@" WHERE rowid = 3 "];
+        LKDBSQLState *query = [[LKDBSQLState alloc] object:[User class] type:WHERE key:@"account" opt:@"=" value:@"3"];
+        
+        User *users = [User findFirstByCriteria:[query sqlOptionStr]];
         NSLog(@"第一条:%@",users);
     });
 }
 //条件查询
 - (IBAction)query2:(id)sender {
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
-        NSArray *dataArray = [User findByCriteria:@" WHERE age < 4 "];
+        LKDBSQLState *sql = [[LKDBSQLState alloc] object:[User class] type:WHERE key:@"age" opt:@"<" value:@"4"];
+        
+        NSArray *dataArray = [User findByCriteria:[sql sqlOptionStr]];
+        
         for (User *user in dataArray) {
             NSLog(@"条件查询%@",user);
         }
@@ -168,6 +175,8 @@
 //分页查询
 - (IBAction)query4:(id)sender {
     static int rowid = 0;
+    //支持自定义查询语句  sql查询过多  具体请查看sql写法
+    //LKDBSQLState只支持一般常用sql语句
     NSArray *array = [User findByCriteria:[NSString stringWithFormat:@" WHERE rowid > %d limit 10",rowid]];
     
     for (User *user in array) {
