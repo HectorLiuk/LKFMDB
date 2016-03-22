@@ -15,22 +15,6 @@
 - `LKDBColumnDes` 修饰 对字段修饰
 - `LKDBSQLState` sql语句封装 -------------正在对此模块封装中......
 
-```objc
-@interface Ad : NSObject
-@property (copy, nonatomic) NSString *image;
-@property (copy, nonatomic) NSString *url;
-@end
-
-@interface StatusResult : NSObject
-/** Contatins status model */
-@property (strong, nonatomic) NSMutableArray *statuses;
-/** Contatins ad model */
-@property (strong, nonatomic) NSArray *ads;
-@property (strong, nonatomic) NSNumber *totalNumber;
-@end
-```
-
-
 ####To do
 - 正在对查询删除sql语句封装中.....
 - 正在完善API
