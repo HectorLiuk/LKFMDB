@@ -15,15 +15,6 @@
 - `LKDBColumnDes` 修饰 对字段修饰
 - `LKDBSQLState` sql语句封装 -------------正在对此模块封装中......
 
-```objc
-/** 主键 id */
-@property (nonatomic, assign)   int        pk;
-/** 列名 */
-@property (retain, readonly, nonatomic) NSMutableArray         *columeNames;
-/** 列类型 */
-@property (retain, readonly, nonatomic) NSMutableArray         *columeTypes;
-```
-
 
 ####To do
 - 正在对查询删除sql语句封装中.....
