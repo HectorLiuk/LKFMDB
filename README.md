@@ -22,22 +22,166 @@
 - `LKDBColumnDes` 字段修饰模块 对字段修饰
 - `LKDBSQLState` sql语句封装模块 -------------正在对此模块封装中......
 
+###方法介绍
+ - ####`LKDBTool`
+ ```
+/**
+ *  单列 操作数据库保证唯一
+ */
++ (instancetype)shareInstance;
+/**
+ *  数据库路径
+ */
++ (NSString *)dbPath;
+/**
+ *  切换数据库
+ */
+- (BOOL)changeDBWithDirectoryName:(NSString *)directoryName;
+```
+ - ####`LKDBModel`
+```
+#pragma mark 常用方法
+/** 保存或更新
+ * 如果不存在主键，保存，
+ * 有主键，则更新
+ */
+- (BOOL)saveOrUpdate;
+/** 保存或更新
+ * 如果根据特定的列数据可以获取记录，则更新，
+ * 没有记录，则保存
+ */
+- (BOOL)saveOrUpdateByColumnName:(NSString*)columnName AndColumnValue:(NSString*)columnValue;
+/** 保存单个数据 */
+- (BOOL)save;
+/** 批量保存数据 */
++ (BOOL)saveObjects:(NSArray *)array;
 
-####`LKDBTool`
-    /**
-    *  单列 操作数据库保证唯一
-    */
-    + (instancetype)shareInstance;
-    /**
-    *  数据库路径
-    */
-    + (NSString *)dbPath;
-    /**
-    *  切换数据库
-    */
-    - (BOOL)changeDBWithDirectoryName:(NSString *)directoryName;
++(BOOL)saveOrUpdateObjects:(NSArray *)array;
+/** 更新单个数据 */
+- (BOOL)update;
+/** 批量更新数据*/
++ (BOOL)updateObjects:(NSArray *)array;
+/** 删除单个数据 */
+- (BOOL)deleteObject;
+/** 批量删除数据 */
++ (BOOL)deleteObjects:(NSArray *)array;
+/** 通过条件删除数据 */
++ (BOOL)deleteObjectsByCriteria:(NSString *)criteria;
+/** 通过条件删除 (多参数）--2 */
++ (BOOL)deleteObjectsWithFormat:(NSString *)format, ...;
+/** 清空表 */
++ (BOOL)clearTable;
 
-###`LKDBModel`
+/** 查询全部数据 */
++ (NSArray *)findAll;
+
+/** 通过主键查询 */
++ (instancetype)findByPK:(id)inPk;
+
++ (instancetype)findFirstWithFormat:(NSString *)format, ...;
+
+/** 查找某条数据 */
++ (instancetype)findFirstByCriteria:(NSString *)criteria;
+
++ (NSArray *)findWithFormat:(NSString *)format, ...;
+
+/** 通过条件查找数据
+ * 这样可以进行分页查询 @" WHERE pk > 5 limit 10"
+ */
++ (NSArray *)findByCriteria:(NSString *)criteria;
+/**
+ * 创建表
+ * 如果已经创建，返回YES
+ */
++ (BOOL)createTable;
+
+
+
+#pragma mark 必须要重写的方法
+/** 如果子类中有一些property不需要创建数据库字段,或者对字段加修饰属性   具体请参考LKDBColumnDes类*/
++ (NSDictionary *)describeColumnDict;
+
+#pragma mark 不重要的方法
+/**
+ *  获取该类的所有属性
+ */
++ (NSDictionary *)getPropertys;
+
+/** 获取所有属性，包括主键 */
++ (NSDictionary *)getAllProperties;
+
+/** 数据库中是否存在表 */
++ (BOOL)isExistInTable;
+
+/** 表中的字段*/
++ (NSArray *)getColumns;
+
+```
+ - ####`LKDBColumnDes`
+```
+/** 别名 */
+@property (nonatomic, copy)  NSString *columnName;
+/** 限制 */
+@property (nonatomic, copy)  NSString *check;
+/** 默认 */
+@property (nonatomic, copy)  NSString *defaultValue;
+/** 外键 */
+@property (nonatomic, copy)  NSString *foreignKey;
+/** 是否为主键 */
+@property (nonatomic, assign, getter=isPrimaryKey)  BOOL      primaryKey;
+/** 是否为唯一 */
+@property (nonatomic, assign, getter=isUnique)  BOOL      unique;
+/** 是否为不为空 */
+@property (nonatomic, assign, getter=isNotNull)  BOOL      notNull;
+/** 是否为自动升序 如何为text就不能自动升序 */
+@property (nonatomic, assign, getter=isAutoincrement)  BOOL      autoincrement;
+/** 此属性是否创建数据库字段 */
+@property (nonatomic, assign, getter=isUseless) BOOL useless;
+
+/**
+ *  主键便利构造器
+ */
+- (instancetype)initWithAuto:(BOOL)isAutoincrement isNotNull:(BOOL)notNull check:(NSString *)check defaultVa:(NSString *)defaultValue;
+/**
+ *  一般字段便利构造器
+ */
+- (instancetype)initWithgeneralFieldWithAuto:(BOOL)isAutoincrement  unique:(BOOL)isUnique isNotNull:(BOOL)notNull check:(NSString *)check defaultVa:(NSString *)defaultValue;
+/**
+ *  外键构造器
+ */
+- (instancetype)initWithFKFiekdUnique:(BOOL)isUnique isNotNull:(BOOL)notNull check:(NSString *)check default:(NSString *)defaultValue foreignKey:(NSString *)foreignKey;
+/**
+ *  判断是否起别名
+ */
+- (BOOL)isCustomColumnName:(NSString *)attribiteName;
+/**
+ *  生成修饰语句
+ */
+- (NSString *)finishModify;
+
+
+```
+ - ####`LKDBSQLState`
+```
+/**
+ *  查询方法
+ *
+ *  @param obj   model类
+ *  @param type  查询类型
+ *  @param key   key
+ *  @param opt   条件
+ *  @param value 值
+ */
+- (LKDBSQLState *)object:(Class)obj
+                       type:(QueryType)type
+                        key:(id)key
+                        opt:(NSString *)opt
+                      value:(id)value;
+/**
+ *  生成查询语句
+ */
+-(NSString *)sqlOptionStr;
+```
 
 
 
