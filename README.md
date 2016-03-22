@@ -11,9 +11,31 @@
 
 ####基本模块介绍
 - `LKDBTool` 创建单例对数据库操作
-- `LKDBModel` 核心业务模块，对FMDB封装。 核心模块参考`*JSONModel*` 对属性的获取
+- `LKDBModel` 核心业务模块，对FMDB封装。 核心模块runtime 对属性的获取
 - `LKDBColumnDes` 修饰 对字段修饰
-- `LKDBQueryConfig` sql语句封装 -------------正在对此模块封装中......
+- `LKDBSQLState` sql语句封装 -------------正在对此模块封装中......
+
+```
+/** 别名 */
+@property (nonatomic, copy)  NSString *columnName;
+/** 限制 */
+@property (nonatomic, copy)  NSString *check;
+/** 默认 */
+@property (nonatomic, copy)  NSString *defaultValue;
+/** 外键 */
+@property (nonatomic, copy)  NSString *foreignKey;
+/** 是否为主键 */
+@property (nonatomic, assign, getter=isPrimaryKey)  BOOL      primaryKey;
+/** 是否为唯一 */
+@property (nonatomic, assign, getter=isUnique)  BOOL      unique;
+/** 是否为不为空 */
+@property (nonatomic, assign, getter=isNotNull)  BOOL      notNull;
+/** 是否为自动升序 如何为text就不能自动升序 */
+@property (nonatomic, assign, getter=isAutoincrement)  BOOL      autoincrement;
+/** 此属性是否创建数据库字段 */
+@property (nonatomic, assign, getter=isUseless) BOOL useless;
+```
+
 
 ####To do
 - 正在对查询删除sql语句封装中.....
