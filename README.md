@@ -33,6 +33,8 @@ else{
 + (NSString *)dbPath;
 /**  切换数据库*/
 - (BOOL)changeDBWithDirectoryName:(NSString *)directoryName;
++ (instancetype)headerWithRefreshingTarget:(id)target refreshingAction:(SEL)action;
+
 ```
 
 
