@@ -11,12 +11,12 @@
 ##支持`SQLCipher`加密 
 默认为加密模式
 如需要取消在fmdb文件下FMDatabase.m文件下
-    ```
-      //注释掉低150行和177行代码
-      else{
-       [self setKey:DB_SECRETKEY];
-      }
-    ```
+```
+//注释掉低150行和177行代码
+else{
+[self setKey:DB_SECRETKEY];
+}
+```
 
 ##基本模块介绍
 - `LKDBTool` 创建单例对数据库操作
@@ -27,19 +27,14 @@
 ##方法介绍
 ###`LKDBTool`
 ```
-/**
- *  单列 操作数据库保证唯一
- */
+/** 单列 操作数据库保证唯一*/
 + (instancetype)shareInstance;
-/**
- *  数据库路径
- */
+/**  数据库路径*/
 + (NSString *)dbPath;
-/**
- *  切换数据库
- */
+/**  切换数据库*/
 - (BOOL)changeDBWithDirectoryName:(NSString *)directoryName;
 ```
+
 
 ###`LKDBModel`
 ```
