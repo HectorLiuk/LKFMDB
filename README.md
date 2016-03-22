@@ -23,22 +23,9 @@
 - `LKDBSQLState` sql语句封装模块 -------------正在对此模块封装中......
 
 ###方法介绍
- - ####`LKDBTool`
- ```
-/**
- *  单列 操作数据库保证唯一
- */
-+ (instancetype)shareInstance;
-/**
- *  数据库路径
- */
-+ (NSString *)dbPath;
-/**
- *  切换数据库
- */
-- (BOOL)changeDBWithDirectoryName:(NSString *)directoryName;
-```
- - ####`LKDBModel`
+ ####`LKDBTool`
+
+ ####`LKDBModel`
 ```
 #pragma mark 常用方法
 /** 保存或更新
@@ -117,7 +104,7 @@
 + (NSArray *)getColumns;
 
 ```
- - ####`LKDBColumnDes`
+ ####`LKDBColumnDes`
 ```
 /** 别名 */
 @property (nonatomic, copy)  NSString *columnName;
@@ -161,7 +148,7 @@
 
 
 ```
- - ####`LKDBSQLState`
+ ####`LKDBSQLState`
 ```
 /**
  *  查询方法
