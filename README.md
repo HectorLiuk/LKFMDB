@@ -16,11 +16,6 @@
 - `LKDBSQLState` sql语句封装 -------------正在对此模块封装中......
 
 ```objc
-@interface Ad : NSObject
-@property (copy, nonatomic) NSString *image;
-@property (copy, nonatomic) NSString *url;
-@end
-
 /** 主键 id */
 @property (nonatomic, assign)   int        pk;
 /** 列名 */
