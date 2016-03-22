@@ -3,7 +3,7 @@
 ##对`FMDB`面向对象封装,支持任意类型主键,可对每个字段修饰,傻瓜式操作,一键即可保存更新,用过的人都说好。
 
 ##如何使用
-1. 默认程序导入过`FMDB`
+1. 首先确保你的程序导入过`FMDB`
 2. 导入文件`LKFMDB`
 3. 是否需要加密，不需要不用导入`SQLCipher`,下面会介绍如何加密。
 4. 对需要创建数据库的类继承`LKDBModel`
@@ -24,6 +24,20 @@
 
 ##方法介绍
 ###`LKDBTool`
+```
+/**
+ *  单列 操作数据库保证唯一
+ */
++ (instancetype)shareInstance;
+/**
+ *  数据库路径
+ */
++ (NSString *)dbPath;
+/**
+ *  切换数据库
+ */
+- (BOOL)changeDBWithDirectoryName:(NSString *)directoryName;
+```
 
 ###`LKDBModel`
 ```
