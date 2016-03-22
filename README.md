@@ -10,7 +10,7 @@
 
 ##支持`SQLCipher`加密 
 默认为加密模式
-如需要取消在fmdb文件下FMDatabase.m文件下
+如需要取消在`FMDB`文件下`FMDatabase.m`文件下
 ```
 //注释掉低150行和177行代码
 else{
@@ -20,7 +20,7 @@ else{
 
 ##基本模块介绍
 - `LKDBTool` 创建单例对数据库操作
-- `LKDBModel` 核心业务模块 对FMDB封装。 核心模块runtime 对属性的获取
+- `LKDBModel` 核心业务模块 对FMDB封装。 核心模块runtime 对属性的获取，下面会对核心代码讲解。
 - `LKDBColumnDes` 字段修饰模块 对字段修饰
 - `LKDBSQLState` sql语句封装模块 -------------正在对此模块封装中......
 
@@ -33,8 +33,6 @@ else{
 + (NSString *)dbPath;
 /**  切换数据库*/
 - (BOOL)changeDBWithDirectoryName:(NSString *)directoryName;
-+ (instancetype)headerWithRefreshingTarget:(id)target refreshingAction:(SEL)action;
-
 ```
 
 
@@ -142,8 +140,24 @@ else{
 -(NSString *)sqlOptionStr;
 ```
 
+##核心代码
+通过`runtime`获取一个类的属性名称和类型，根据名称和类型生成建表语句。
+```
+// 获得一个类的属性名称操作
+  objc_property_t * properties = class_copyPropertyList([self class], &outCount);
+  for (int i = 0; i < outCount; i++) {
+      objc_property_t property = properties[i];
+      //获得属性名称
+       NSString *propertyName = [NSString stringWithCString:property_getName(property) encoding:NSUTF8StringEncoding];
+      //获得属性类型
+       NSString *propertyType = [NSString stringWithCString: property_getAttributes(property) encoding:NSUTF8StringEncoding];
+  }
 
-###To do
+```
+
+
+
+##To do
 - 正在对查询删除sql语句封装中.....
 - 正在完善API
 
