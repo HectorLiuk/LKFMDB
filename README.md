@@ -12,7 +12,7 @@
 默认为加密模式
 如需要取消在`FMDB`文件下`FMDatabase.m`文件下
 ```
-//注释掉低150行和177行代码
+//注释掉第150行和177行代码
 else{
 [self setKey:DB_SECRETKEY];
 }
