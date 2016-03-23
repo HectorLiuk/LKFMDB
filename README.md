@@ -162,6 +162,18 @@ else{
 @property (nonatomic, copy)  NSString *check;
 /** 默认 */
 @property (nonatomic, copy)  NSString *defaultValue;
+
+@interface MJRefreshFooter : MJRefreshComponent
+/** 创建footer */
++ (instancetype)footerWithRefreshingBlock:(MJRefreshComponentRefreshingBlock)refreshingBlock;
+/** 创建footer */
++ (instancetype)footerWithRefreshingTarget:(id)target refreshingAction:(SEL)action;
+
+@interface MJRefreshFooter : MJRefreshComponent
+/** 创建footer */
++ (instancetype)footerWithRefreshingBlock:(MJRefreshComponentRefreshingBlock)refreshingBlock;
+/** 创建footer */
++ (instancetype)footerWithRefreshingTarget:(id)target refreshingAction:(SEL)action;
 ```
 
 ##To do
