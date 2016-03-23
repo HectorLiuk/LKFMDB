@@ -155,17 +155,6 @@ else{
   }
 
 ```
-```
-// 获得一个类的属性名称操作
-  objc_property_t * properties = class_copyPropertyList([self class], &outCount);
-  for (int i = 0; i < outCount; i++) {
-      objc_property_t property = properties[i];
-      //获得属性名称
-       NSString *propertyName = [NSString stringWithCString:property_getName(property) encoding:NSUTF8StringEncoding];
-      //获得属性类型
-       NSString *propertyType = [NSString stringWithCString: property_getAttributes(property) encoding:NSUTF8StringEncoding];
-  }
-```
 ##To do
 - 正在对查询删除sql语句封装中.....
 - 正在完善API
