@@ -155,26 +155,6 @@ else{
   }
 
 ```
-```
-/** 别名 */
-@property (nonatomic, copy)  NSString *columnName;
-/** 限制 */
-@property (nonatomic, copy)  NSString *check;
-/** 默认 */
-@property (nonatomic, copy)  NSString *defaultValue;
-
-@interface MJRefreshFooter : MJRefreshComponent
-/** 创建footer */
-+ (instancetype)footerWithRefreshingBlock:(MJRefreshComponentRefreshingBlock)refreshingBlock;
-/** 创建footer */
-+ (instancetype)footerWithRefreshingTarget:(id)target refreshingAction:(SEL)action;
-
-@interface MJRefreshFooter : MJRefreshComponent
-/** 创建footer */
-+ (instancetype)footerWithRefreshingBlock:(MJRefreshComponentRefreshingBlock)refreshingBlock;
-/** 创建footer */
-+ (instancetype)footerWithRefreshingTarget:(id)target refreshingAction:(SEL)action;
-```
 
 ##To do
 - 正在对查询删除sql语句封装中.....
