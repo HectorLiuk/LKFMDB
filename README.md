@@ -156,17 +156,6 @@ else{
 
 ```
 
-
-    
-```
-
-+ (CGFloat)getHTMLHeightWithWidth:(CGFloat)width withString:(NSString *)htmlString
-{
-    NSAttributedString *attributedString = [[NSAttributedString alloc] initWithData:[htmlString dataUsingEncoding:NSUnicodeStringEncoding] options:@{ NSDocumentTypeDocumentAttribute: NSHTMLTextDocumentType} documentAttributes:nil error:nil];
-    CGRect rect = [attributedString boundingRectWithSize:CGSizeMake(width, 10000) options:NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading context:nil];
-    return rect.size.height;
-}
-```
 ##To do
 - 正在对查询删除sql语句封装中.....
 - 正在完善API
