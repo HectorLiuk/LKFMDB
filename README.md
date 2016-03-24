@@ -1,6 +1,6 @@
 # LKFMDB
 ![License MIT](https://go-shields.herokuapp.com/license-MIT-blue.png)&nbsp;
-[![SUPPORT](https://img.shields.io/badge/support-iOS%207%2B%20-blue.svg?style=flat)](https://en.wikipedia.org/wiki/IOS_6)&nbsp;
+[![SUPPORT](https://img.shields.io/badge/support-iOS%207%2B%20-blue.svg?style=flat)](https://en.wikipedia.org/wiki/IOS_7)&nbsp;
 ![Platform info](http://img.shields.io/cocoapods/p/YTKKeyValueStore.svg?style=flat)
 
 
