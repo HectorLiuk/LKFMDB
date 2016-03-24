@@ -26,7 +26,7 @@ else{
 
 ##常用方法介绍 - 具体查看Demo 
 ###`LKDBTool`
-```
+```objc
 /** 单列 操作数据库保证唯一*/
 + (instancetype)shareInstance;
 /**  数据库路径*/
@@ -37,7 +37,7 @@ else{
 
 
 ###`LKDBModel`
-```
+```objc
 #pragma mark 常用方法
 /** 保存或更新
  * 如果不存在主键，保存，
