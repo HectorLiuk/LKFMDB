@@ -9,6 +9,7 @@
 4. 对需要创建数据库的类继承`LKDBModel`
 
 ##支持`SQLCipher`加密 
+具体介绍：[对FMDB加密-SQLCipher如何使用](http://www.jianshu.com/p/bd7845062cc8)
 默认为加密模式
 如需要取消在`FMDB`文件下`FMDatabase.m`文件下
 ```objc
