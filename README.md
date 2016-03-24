@@ -11,7 +11,7 @@
 ##支持`SQLCipher`加密 
 默认为加密模式
 如需要取消在`FMDB`文件下`FMDatabase.m`文件下
-```
+```objc
 //注释掉第150行和177行代码
 else{
 [self setKey:DB_SECRETKEY];
@@ -78,7 +78,7 @@ else{
 
 ###`LKDBColumnDes`
 请看Demo `User.m`文件如何使用
-```
+```objc
 /** 别名 */
 @property (nonatomic, copy)  NSString *columnName;
 /** 限制 */
@@ -120,7 +120,7 @@ else{
 ```
 
 ###`LKDBSQLState`
-```
+```objc
 /**
  *  查询方法
  *
@@ -143,7 +143,7 @@ else{
 
 ##核心代码
 通过`runtime`获取一个类的属性名称和类型，根据名称和类型生成建表语句。
-```
+```objc
 // 获得一个类的属性名称操作
   objc_property_t * properties = class_copyPropertyList([self class], &outCount);
   for (int i = 0; i < outCount; i++) {
