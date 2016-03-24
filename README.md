@@ -1,5 +1,9 @@
 # LKFMDB
-[![SUPPORT](https://img.shields.io/badge/support-iOS%207%2B%20-blue.svg?style=flat)](https://en.wikipedia.org/wiki/IOS_7)&nbsp;
+[![SUPPORT](https://img.shields.io/badge/support-iOS%207%2B%20-blue.svg?style=flat)](https://en.wikipedia.org/wiki/IOS_6)&nbsp
+![License MIT](https://go-shields.herokuapp.com/license-MIT-blue.png)
+![Platform info](http://img.shields.io/cocoapods/p/YTKKeyValueStore.svg?style=flat)
+
+
 ##对`FMDB`面向对象封装,支持任意类型主键,可对每个字段修饰,傻瓜式操作,一键即可保存更新,用过的人都说好。
 
 ##如何使用
