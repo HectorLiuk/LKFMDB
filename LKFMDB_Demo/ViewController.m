@@ -136,11 +136,6 @@
         [User saveOrUpdateObjects:array];
     });
 }
-
-
-
-
-
 //查一条数据
 - (IBAction)query1:(id)sender {
     dispatch_async(dispatch_get_global_queue(0, 0), ^{
@@ -183,15 +178,6 @@
         NSLog(@"分页查询%@",user);
     }
 }
-
-
-
-
-
-
-
-
-
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
