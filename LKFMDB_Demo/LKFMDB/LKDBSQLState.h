@@ -38,4 +38,8 @@ typedef NS_ENUM(NSInteger ,QueryType){
  */
 -(NSString *)sqlOptionStr;
 
+
+
+//todo sort 对排序语句
+
 @end
