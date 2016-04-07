@@ -12,6 +12,8 @@
 3. 是否需要加密，不需要不用导入`SQLCipher`,下面会介绍如何加密。
 4. 对需要创建数据库的类继承`LKDBModel`
 
+<img src="https://raw.github.com/544523660/LKFMDB_Demo/master/Demo/Snapshots/twitter.png" width="320"><br/>
+<img src="https://raw.github.com/544523660/LKFMDB_Demo/master/Demo/Snapshots/twitter.png" width="320"><br/>
 ##支持`SQLCipher`加密 
 具体介绍：[对FMDB加密-SQLCipher如何使用](http://www.jianshu.com/p/bd7845062cc8)
 
