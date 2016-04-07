@@ -12,20 +12,9 @@
 3. 是否需要加密，不需要不用导入`SQLCipher`,下面会介绍如何加密。
 4. 对需要创建数据库的类继承`LKDBModel`
 
-##图片展示
-#####创建数据库类 属性为字段
-
-<img src="https://raw.github.com/544523660/LKFMDB/master/fmdb.png" width="500"><br/>
-
-#####保存数据到数据库
-
-<img src="https://raw.github.com/544523660/LKFMDB/master/vc.png" width="500">
-
-
 
 ##支持`SQLCipher`加密 
 具体介绍：[对FMDB加密-SQLCipher如何使用](http://www.jianshu.com/p/bd7845062cc8)
-
 默认为加密模式
 如需要取消在`FMDB`文件下`FMDatabase.m`文件下
 ```objc
@@ -34,6 +23,16 @@ else{
 [self setKey:DB_SECRETKEY];
 }
 ```
+##图片展示
+#####创建数据库类 属性为字段
+
+<img src="https://raw.github.com/544523660/LKFMDB/master/fmdb.png" width="500"><br/>
+
+#####保存数据到数据库
+
+<img src="https://raw.github.com/544523660/LKFMDB/master/vc.png" width="500">
+#####这样你的数据就可以保存了是不是很简单啊
+
 
 ##基本模块介绍
 - `LKDBTool` 创建单例对数据库操作
