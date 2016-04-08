@@ -4,7 +4,7 @@
 ![Platform info](http://img.shields.io/cocoapods/p/YTKKeyValueStore.svg?style=flat)
 
 
-##对`FMDB`面向对象封装,支持任意类型主键,可对每个字段修饰,傻瓜式操作,一键即可保存更新,用过的人都说好。
+##对`FMDB`面向对象封装,支持任意类型主键,可对每个字段修饰,傻瓜式操作,一键即可保存更新。
 
 ##如何使用
 1. 首先确保你的程序导入过`FMDB`
