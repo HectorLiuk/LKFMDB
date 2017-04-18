@@ -4,16 +4,16 @@
 ![Platform info](http://img.shields.io/cocoapods/p/YTKKeyValueStore.svg?style=flat)
 
 
-##对`FMDB`面向对象封装,支持任意类型主键,可对每个字段修饰,傻瓜式操作,一键即可保存更新。
+## 对`FMDB`面向对象封装,支持任意类型主键,可对每个字段修饰,傻瓜式操作,一键即可保存更新。
 
-##如何使用
+## 如何使用
 1. 首先确保你的程序导入过`FMDB`
 2. 导入文件`LKFMDB`
 3. 是否需要加密，不需要不用导入`SQLCipher`,下面会介绍如何加密。
 4. 对需要创建数据库的类继承`LKDBModel`
 
 
-##支持`SQLCipher`加密 
+## 支持`SQLCipher`加密 
 具体介绍：[对FMDB加密-SQLCipher如何使用](http://www.jianshu.com/p/bd7845062cc8)
 默认为加密模式
 如需要取消在`FMDB`文件下`FMDatabase.m`文件下
@@ -23,25 +23,25 @@ else{
 [self setKey:DB_SECRETKEY];
 }
 ```
-##图片展示
-#####创建数据库类 属性为字段
+## 图片展示
+##### 创建数据库类 属性为字段
 
 <img src="https://raw.github.com/544523660/LKFMDB/master/fmdb.png" width="500"><br/>
 
-#####保存数据到数据库
+##### 保存数据到数据库
 
 <img src="https://raw.github.com/544523660/LKFMDB/master/vc.png" width="500">
-#####这样你的数据就可以保存了是不是很简单啊
+##### 这样你的数据就可以保存了是不是很简单啊
 
 
-##基本模块介绍
+## 基本模块介绍
 - `LKDBTool` 创建单例对数据库操作
 - `LKDBModel` 核心业务模块 对FMDB封装。 核心模块runtime 对属性的获取，下面会对核心代码讲解。
 - `LKDBColumnDes` 字段修饰模块 对字段修饰
 - `LKDBSQLState` sql语句封装模块
 
-##常用方法介绍 - 具体查看Demo 
-###`LKDBTool`
+## 常用方法介绍 - 具体查看Demo 
+### `LKDBTool`
 ```objc
 /** 单列 操作数据库保证唯一*/
 + (instancetype)shareInstance;
@@ -52,7 +52,7 @@ else{
 ```
 
 
-###`LKDBModel`
+### `LKDBModel`
 ```objc
 #pragma mark 常用方法
 /** 保存或更新
@@ -92,7 +92,7 @@ else{
 + (NSDictionary *)describeColumnDict;
 ```
 
-###`LKDBColumnDes`
+### `LKDBColumnDes`
 请看Demo `User.m`文件如何使用
 ```objc
 /** 别名 */
@@ -135,7 +135,7 @@ else{
 - (NSString *)finishModify;
 ```
 
-###`LKDBSQLState`
+### `LKDBSQLState`
 ```objc
 /**
  *  查询方法
@@ -157,7 +157,7 @@ else{
 -(NSString *)sqlOptionStr;
 ```
 
-##核心代码
+## 核心代码
 通过`runtime`获取一个类的属性名称和类型，根据名称和类型生成建表语句。
 ```objc
 // 获得一个类的属性名称操作
@@ -171,10 +171,10 @@ else{
   }
 
 ```
-##注意
+## 注意
 - 比较复杂sql语言需要自己手动输入,然后直接调用`findByCriteria`方法，当然如果只是一般的直接调用`LKDBSQLState`类方法就OK，如果起别名请使用别名字段访问数据库。
 - 创建数据库类时，创建属性把主键放在第一个位置(好像这个无伤大雅，个人喜欢主键放在第一个上懒得改了)，谁有空可以改改这个地方，排序问题。
 
 
 
-##欢迎各位大神指导    544523660@qq.com   
+## 欢迎各位大神指导    544523660@qq.com   
